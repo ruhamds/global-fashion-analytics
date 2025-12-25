@@ -1,0 +1,9 @@
+# Ignore all CSV files
+*.csv
+Notebooks/*.csv
+features_*.csv
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
