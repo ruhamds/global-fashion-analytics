@@ -18,7 +18,7 @@
 
 ## 🎯 Project Overview
 
-A comprehensive retail analytics initiative that transforms 6.28M+ transactions into actionable business intelligence and machine learning-powered customer retention strategies. This project demonstrates end-to-end data science capabilities from data engineering to production deployment.
+Fashio retail analytics initiative that transforms 6.28M+ transactions into actionable business intelligence and machine learning-powered customer retention strategies. This project demonstrates end-to-end data science capabilities from data engineering to production deployment.
 
 ### The Challenge
 
@@ -99,11 +99,12 @@ streamlit run app.py
 ```
 fashion-retail-analytics/
 │
-├── 📊 dashboards/
+├── 📊 app/
+    ├──models/
 │   ├── app.py                          # Main Streamlit application
-│   └── components/                      # Dashboard components
+│   └── data/                      # Dashboard components
 │
-├── 📁 data/
+├── 📁 data/                            #ignored by gitignore
 │   ├── raw/                            # Original datasets (6 tables)
 │   ├── processed/                      # Cleaned, feature-engineered data
 │   └── outputs/                        # ML predictions, 
@@ -116,7 +117,7 @@ fashion-retail-analytics/
 ├── 📓 notebooks/
 │   ├── 01_data_exploration.ipynb      # Initial EDA
 │   ├── 02_feature_engineering.ipynb   # Feature development
-│   ├── 03_business_analysis.ipynb     # BI analysis
+│   ├── 03_business_metrics.ipynb     # BI analysis
 │   └── 04_churn_modeling.ipynb        # ML model development
 │
 ├── 📄 reports/
@@ -125,8 +126,9 @@ fashion-retail-analytics/
 │   ├── Phase_3_Churn_Model.pdf        # ML model report
 │   └── Executive_Summary.pdf          # Strategic overview
 │
+├── scripts/
+   ├──bulk_insert.py
 ├── 📋 requirements.txt
-├── 🐳 Dockerfile                      # Containerized deployment
 └── 📖 README.md
 ```
 
@@ -139,7 +141,6 @@ fashion-retail-analytics/
 #### 🌍 **Geographic Opportunity: $400M+**
 Chinese customers generate **8.1x more revenue** ($1,993 CLV vs $242 CLV in US). If Western markets achieve even 50% of China's performance, that's **$221M incremental revenue** from existing stores.
 
-**Recommendation:** Replicate Chinese success factors (premium positioning, formal menswear focus, flagship locations) in US markets.
 
 #### 👥 **Customer Retention: $79.8M at Risk**
 - 376K customers showing churn signals
@@ -281,7 +282,6 @@ assert all_equal(validation_checks.values()), "Revenue mismatch detected!"
 - **Python 3.9+** - Core language
 - **Pandas 2.0** - Data manipulation
 - **NumPy** - Numerical computing
-- **SQL (PostgreSQL)** - Database queries
 - **SQLAlchemy** - Database ORM
 
 ### Machine Learning
@@ -297,7 +297,6 @@ assert all_equal(validation_checks.values()), "Revenue mismatch detected!"
 - **Plotly** - Interactive charts
 - **Matplotlib/Seaborn** - Static plots
 - **Streamlit** - Web dashboard
-- **Docker** - Containerization
 
 ### Development Tools
 - **Jupyter** - Exploratory analysis
@@ -324,8 +323,8 @@ pip or conda package manager
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/fashion-retail-analytics.git
-cd fashion-retail-analytics
+git clone https://github.com/ruhamds/global-fashion-analytics.git
+cd global-fashion-analytics
 ```
 
 2. **Create virtual environment**
@@ -341,27 +340,17 @@ pip install -r requirements.txt
 
 4. **Set up data**
 ```bash
-# Place your CSV files in data/raw/
+# Place  CSV files in data/raw/
 # Or use sample data provided
 python src/data_engineering/data_cleaning.py
 ```
 
 5. **Run the dashboard**
 ```bash
-streamlit run dashboards/app.py
+streamlit run app/app.py
 ```
 
 6. **Access at** `http://localhost:8501`
-
-### Docker Deployment (Optional)
-
-```bash
-# Build image
-docker build -t fashion-analytics .
-
-# Run container
-docker run -p 8501:8501 fashion-analytics
-```
 
 ---
 
@@ -371,10 +360,10 @@ docker run -p 8501:8501 fashion-analytics
 
 | Report | Description | Audience | Pages |
 |--------|-------------|----------|-------|
-| [Phase 1: Data Engineering](reports/Phase_1_Data_Engineering.pdf) | Technical documentation of data pipeline, quality issues, feature engineering | Technical teams, data scientists | 12 |
-| [Phase 2: Business Intelligence](reports/Phase_2_Business_Intelligence.pdf) | Comprehensive BI analysis with strategic recommendations | Business stakeholders, management | 5 |
-| [Phase 3: Churn Model](reports/Phase_3_Churn_Model.pdf) | ML model documentation, performance, deployment guide | Marketing, technical leadership | 3 |
-| [Executive Summary](reports/Executive_Summary.pdf) | Strategic overview for C-suite, boardroom-ready narrative | C-Suite, Board of Directors | 4 |
+| [Phase 1: Data Engineering](reports/Phase_1_Data_Engineering.pdf) | Technical documentation of data pipeline, quality issues, feature engineering | Technical teams, data scientists | 2 |
+| [Phase 2: Business Intelligence](reports/Phase_2_Business_Intelligence.pdf) | Comprehensive BI analysis with strategic recommendations | Business stakeholders, management | 6 |
+| [Phase 3: Churn Model](reports/Phase_3_Churn_Model.pdf) | ML model documentation, performance, deployment guide | Marketing, technical leadership | 6 |
+| [Executive Summary](reports/Executive_Summary.pdf) | Strategic overview , boardroom-ready narrative | C-Suite, Board of Directors | 2 |
 
 ### 📊 Dashboards
 
@@ -454,13 +443,13 @@ docker run -p 8501:8501 fashion-analytics
 
 ## 👤 About the Author
 
-**[Your Name]**  
-Data Scientist | Machine Learning Engineer | Business Intelligence Specialist
+**Ruhama Israel**  
+Data Scientist | Machine Learning Engineer | 
 
-📧 your.email@example.com  
-💼 [LinkedIn](https://linkedin.com/in/yourprofile)  
-🐙 [GitHub](https://github.com/yourusername)  
-📝 [Portfolio](https://yourportfolio.com)
+📧 ruheezraek@gmail.com  
+💼 [LinkedIn](https://linkedin.com/in/ruhama-israel-4278501b8)  
+🐙 [GitHub](https://github.com/ruhamds)  
+
 
 *Passionate about transforming data into actionable business strategy. Specialized in end-to-end analytics projects from data engineering to production deployment.*
 
@@ -485,21 +474,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Have questions or suggestions? I'd love to hear from you!
 
-- 💬 **Discussion:** [Open an issue](https://github.com/yourusername/fashion-retail-analytics/issues)
-- 📧 **Email:** your.email@example.com
-- 💼 **LinkedIn:** [Connect with me](https://linkedin.com/in/yourprofile)
+- 💬 **Discussion:** [Open an issue](https://github.com/ruhamds/global-fashion-analytics/issues)
+- 📧 **Email:** ruheezrael@gmail.com
+- 💼 **LinkedIn:** [Connect with me](https://linkedin.com/in/ruhama-israel-4278501b8)
 
 ⭐ **Found this helpful?** Star this repo and share with others!
 
 ---
 
-<div align="center">
-
-**Built with ❤️ by [Your Name]**
-
-*Demonstrating end-to-end data science from raw data to strategic business impact*
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/fashion-retail-analytics?style=social)](https://github.com/yourusername/fashion-retail-analytics)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/fashion-retail-analytics?style=social)](https://github.com/yourusername/fashion-retail-analytics)
-
-</div>
